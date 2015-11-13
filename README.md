@@ -9,7 +9,7 @@ This very quickly brings all the machines into consensus and is stable in that i
 
 To use it you need to run a process like `who_is_the_leader.rb` which runs the voting process every four seconds.
 
-For the processes that needs to know if they can run then something like  `example_process.rb` should fit the bill.
+For the processes that needs to know if they can run then something like `example_process.rb` should fit the bill.
 
 # Notes
 
