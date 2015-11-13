@@ -2,7 +2,7 @@ require 'logger'
 
 require 'elect_leader'
 
-TILL_NEXT_UPDATE = 60 * 15
+SECONDS_TILL_NEXT_UPDATE = 60 * 15
 
 logger = Logger.new('example_process.log')
 
@@ -15,7 +15,7 @@ el = ElectLeader.new(my_name, '/path/to/nfs/mount/')
 loop do
   if el.am_i_the_leader?
     if next_run < Time.now
-      logger.info "I am the leader so I will collect this data"
+      logger.info "I am the leader so I will collect the data"
 
       begin
         ##
@@ -26,7 +26,7 @@ loop do
         e.backtrace.each { |line| logger.warn line }
       end
 
-      next_run = Time.now + TILL_NEXT_UPDATE
+      next_run = Time.now + SECONDS_TILL_NEXT_UPDATE
 
       logger.info "Sleeping until #{next_run}"
     end
