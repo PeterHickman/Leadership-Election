@@ -5,13 +5,13 @@ require 'elect_leader'
 
 ##
 # Each machine in the cluster need to be uniquely identified. For me the
-# short host name is good enough.
+# short hostname is good enough. Not sure what the Windows command would
+# be though.
 ##
 
 my_name = `hostname -s`.chomp
 
 logger = Logger.new('elect_leader.log')
-logger.formatter = Logger::Formatter.new
 
 logger.info "Starting to elect a leader by #{my_name}"
 

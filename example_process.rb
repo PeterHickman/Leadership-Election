@@ -1,9 +1,10 @@
+require 'logger'
+
 require 'elect_leader'
 
 TILL_NEXT_UPDATE = 60 * 15
 
 logger = Logger.new('example_process.log')
-logger.formatter = Logger::Formatter.new
 
 next_run = Time.at(0)
 

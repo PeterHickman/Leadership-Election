@@ -11,6 +11,10 @@ To use it you need to run a process like `who_is_the_leader.rb` which runs the v
 
 For the processes that needs to know if they can run then something like  `example_process.rb` should fit the bill.
 
+# Notes
+
+There is a link between the frequency that `who_is_the_leader.rb` polls and the `INACTIVE_LIMIT` in the `elect_leader.rb` file. If machines are being incorrectly being flagged as inactive then either increase the value of `INACTIVE_LIMIT` or poll more frequently. But these values work for me.
+
 # Limitations
 
 I have not had this run with more than 5 servers. It works well but I'm not too sure that this would scale well.
