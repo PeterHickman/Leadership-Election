@@ -1,7 +1,7 @@
 # Leadership-Election
 I have several servers but I need it that only one machine takes on the role as a leader to perform particular functions. The only form of communication is a common directory (an NFS mount for example).
 
-Each machine writes a file to the common area saying who it thinks is the current leader. They then, individually, read all the votes and work out who the really is and write a new file with the new leader. If there appears to be no suitable leader they will vote for themselves (they know that they are at least active).
+Each machine writes a file to the common area saying who it thinks is the current leader. They then, individually, read all the votes and work out who the leader really is and write a new file with the new leader. If there appears to be no suitable leader they will vote for themselves (they know that they are at least active).
 
 This very quickly brings all the machines into consensus and is stable in that it does not change the leader unless the leader becomes inactive.
 
